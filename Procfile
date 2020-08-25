@@ -1,1 +1,1 @@
-web: gunicorn app:flask_app
+web: gunicorn app:flask_app --host 0.0.0.0 --port $PORT
