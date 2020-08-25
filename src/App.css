@@ -1,0 +1,64 @@
+html, body {
+  background: url('gender.jpg') center center no-repeat;
+  background-size: cover;
+  color: white;
+  height: 100%;
+  width: 100%;
+}
+
+.content {
+  margin: auto;
+  margin-top: 20px;
+  width: 60%;
+  height: auto;
+  background-color: #fff;
+  opacity: 0.7;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.title {
+  padding-top: 68px;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 4em;
+  letter-spacing: 0.15rem;
+  color: #fff;
+}
+
+.pred-button{
+  width: 53%;
+}
+
+
+label {
+  color: #333;
+}
+
+.hidden {
+  display: none;
+}
+
+.inline-errormsg {
+  color: red;
+  font-size: 12px;
+}
+
+.form-control {
+  background-color: #fff;
+  width: 50% !important;
+  opacity: 0.7;
+}
+
+.result-container {
+  text-align: center;
+  font-weight: 600;
+  font-size: 4em;
+  letter-spacing: 0.15rem;
+  padding: 20px 0 0;
+}
+
+#result {
+  color: white;
+}
