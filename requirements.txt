@@ -20,3 +20,4 @@ Werkzeug==0.15.2
 nltk==3.5
 torch==1.6.0+cpu
 torchvision==0.7.0+cpu
+gunicorn
