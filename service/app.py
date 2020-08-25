@@ -1,13 +1,13 @@
 from flask import Flask, request, jsonify, make_response
 from flask_restplus import Api, Resource, fields
-from nltk.corpus import stopwords
+import nltk
 import string
 import torch
 import torch.nn as nn
 import numpy as np
 import csv
 import sys
-
+nltk.download("stopwords")
 csv.field_size_limit(sys.maxsize)
 
 
@@ -178,7 +178,7 @@ class CharCNN(nn.Module):
 
 def predict_gender(text):
     res = ""
-    words = stopwords.words("english")
+    words = nltk.corpus.stopwords.words("english")
     table = str.maketrans('', '', string.punctuation)
     # text = "This thing is not good at all. Do not buy it."
     text = text[0]
