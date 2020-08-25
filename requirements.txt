@@ -1,87 +1,20 @@
-absl-py==0.9.0
-aniso8601==8.0.0
-appdirs==1.4.3
-asn1crypto @ file:///home/conda/feedstock_root/build_artifacts/asn1crypto_1595949944546/work
-attrs @ file:///home/conda/feedstock_root/build_artifacts/attrs_1597959372343/work
-blinker==1.4
-brotlipy==0.7.0
-cached-property==1.5.1
-cachetools @ file:///home/conda/feedstock_root/build_artifacts/cachetools_1593420445823/work
-certifi==2020.6.20
-cffi @ file:///tmp/build/80754af9/cffi_1596809843656/work
-chardet==3.0.4
-click==7.1.2
-cryptography @ file:///home/conda/feedstock_root/build_artifacts/cryptography_1595348770643/work
-distro @ file:///home/conda/feedstock_root/build_artifacts/distro_1591810140801/work
-docker @ file:///home/conda/feedstock_root/build_artifacts/docker-py_1598002855893/work
-docker-compose @ file:///home/conda/feedstock_root/build_artifacts/docker-compose_1593710524268/work
-docker-pycreds==0.4.0
-dockerpty==0.4.1
-docopt==0.6.2
-Flask==1.1.2
-flask-restplus==0.13.0
-future==0.18.2
-google-auth @ file:///home/conda/feedstock_root/build_artifacts/google-auth_1596824655612/work
-google-auth-oauthlib==0.4.1
-grpcio @ file:///home/conda/feedstock_root/build_artifacts/grpcio_1596715635637/work
-gunicorn==20.0.4
-h5py==2.10.0
-idna @ file:///home/conda/feedstock_root/build_artifacts/idna_1593328102638/work
-importlib-metadata @ file:///home/conda/feedstock_root/build_artifacts/importlib-metadata_1593211370946/work
+aniso8601==6.0.0
+attrs==19.1.0
+Click==7.0
+Flask==1.0.2
+Flask-Cors==3.0.7
+flask-restplus==0.12.1
 itsdangerous==1.1.0
-Jinja2==2.11.2
-joblib==0.16.0
-jsonschema==3.2.0
-Markdown @ file:///home/conda/feedstock_root/build_artifacts/markdown_1589366472132/work
+Jinja2==2.10.1
+jsonschema==3.0.1
 MarkupSafe==1.1.1
-mkl-fft==1.1.0
-mkl-random==1.1.0
-mkl-service==2.3.0
-nltk==3.5
-node==0.9.25
-numpy @ file:///tmp/build/80754af9/numpy_and_numpy_base_1596233721170/work
-oauthlib==3.0.1
-odict==1.7.0
-packaging @ file:///home/conda/feedstock_root/build_artifacts/packaging_1589925210001/work
-pandas==1.1.1
-plumber==1.6
-protobuf==3.13.0
-pyasn1==0.4.8
-pyasn1-modules==0.2.7
-pycparser @ file:///home/conda/feedstock_root/build_artifacts/pycparser_1593275161868/work
-PyJWT==1.7.1
-pyOpenSSL==19.1.0
-pyparsing==2.4.7
-pyrsistent==0.16.0
-PySocks==1.7.1
-python-dateutil==2.8.1
-python-dotenv @ file:///home/conda/feedstock_root/build_artifacts/python-dotenv_1593788306353/work
-pytorch-lightning @ file:///home/conda/feedstock_root/build_artifacts/pytorch-lightning_1594356192327/work
-pytz==2020.1
-PyYAML==5.3.1
-regex==2020.7.14
-requests @ file:///home/conda/feedstock_root/build_artifacts/requests_1592425495151/work
-requests-oauthlib @ file:///home/conda/feedstock_root/build_artifacts/requests-oauthlib_1595492159598/work
-rsa @ file:///home/conda/feedstock_root/build_artifacts/rsa_1591996208734/work
-scikit-learn==0.23.2
-scipy==1.5.2
-six @ file:///home/conda/feedstock_root/build_artifacts/six_1590081179328/work
+numpy==1.16.2
+pyrsistent==0.14.11
+pytz==2019.1
+scikit-learn==0.20.3
+scipy==1.2.1
+six==1.12.0
 sklearn==0.0
-tensorboard @ file:///home/conda/feedstock_root/build_artifacts/tensorboard_1595378845776/work/tensorboard-2.3.0-py3-none-any.whl
-tensorboard-plugin-wit @ file:///home/conda/feedstock_root/build_artifacts/tensorboard-plugin-wit_1592816951245/work/tensorboard_plugin_wit-1.6.0.post3-py3-none-any.whl
-texttable==1.6.2
-threadpoolctl==2.1.0
+Werkzeug==0.15.2
+nltk==3.5
 torch==1.6.0
-tqdm @ file:///home/conda/feedstock_root/build_artifacts/tqdm_1596476591553/work
-urllib3 @ file:///home/conda/feedstock_root/build_artifacts/urllib3_1595434816409/work
-websocket-client==0.57.0
-Werkzeug==0.16.1
-zipp==3.1.0
-zope.component==4.6.2
-zope.deferredimport==4.3.1
-zope.deprecation==4.4.0
-zope.event==4.4
-zope.hookable==5.0.1
-zope.interface==5.1.0
-zope.lifecycleevent==4.3
-zope.proxy==4.3.5
