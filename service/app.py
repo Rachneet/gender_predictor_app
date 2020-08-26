@@ -7,6 +7,7 @@ import torch.nn as nn
 import numpy as np
 import csv
 import sys
+import os
 
 csv.field_size_limit(sys.maxsize)
 
@@ -257,6 +258,6 @@ def predict_gender(text):
 
 
 if __name__ == "__main__":
-	flask_app.run(debug=True)
+    flask_app.run(host='127.0.0.1',debug=False, port=os.environ.get('PORT', 5000))
     # res = predict_gender("This is not a good product. Please avoid it")
     # print(res)
