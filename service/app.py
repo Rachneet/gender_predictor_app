@@ -8,6 +8,7 @@ import numpy as np
 import csv
 import sys
 import os
+import char_cnn
 from char_cnn import CharCNN
 
 
