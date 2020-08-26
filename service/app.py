@@ -131,7 +131,7 @@ def predict_gender(text):
         data = np.zeros((max_length, len(vocabulary)), dtype=np.float32)
 
 
-    model = torch.load("../model_amz_ccnn").cpu()
+    model = torch.load("model_amz_ccnn").cpu()
     model.eval()
 
     data = torch.FloatTensor(data).cpu()
