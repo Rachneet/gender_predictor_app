@@ -238,7 +238,7 @@ def predict_gender(text):
 
 
     model = CharCNN(n_classes=2)
-    model = torch.load("../model_amz_ccnn").cpu()
+    model = torch.load("model_amz_ccnn").cpu()
     model.eval()
 
     data = torch.FloatTensor(data).cpu()
