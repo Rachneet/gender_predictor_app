@@ -9,6 +9,7 @@ import csv
 import sys
 import os
 
+
 csv.field_size_limit(sys.maxsize)
 
 
@@ -185,6 +186,7 @@ class CharCNN(nn.Module):
             self._create_weights(mean=0.0, std=0.05)
         elif filters == 1024 and n_fc_neurons == 2048:
             self._create_weights(mean=0.0, std=0.02)
+            
 
     def _create_weights(self, mean=0.0, std=0.05):
         for module in self.modules():
@@ -259,6 +261,7 @@ def predict_gender(text):
 
 
 if __name__ == "__main__":
+    cnn = CharCNN(n_classes=2)
     if (os.environ.get('PORT')):
         port = int(os.environ.get('PORT'))
     else:
