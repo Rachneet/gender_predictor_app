@@ -108,3 +108,7 @@ class CharCNN(nn.Module):
         output = self.sigmoid(output)
 
         return output
+
+
+if __name__=="__main__":
+    obj = CharCNN(n_classes=2)
