@@ -258,7 +258,10 @@ def predict_gender(text):
 
 
 if __name__ == "__main__":
-    port = int(os.environ.get('PORT', 5000))
-    flask_app.run(host='127.0.0.1',debug=False, port=port)
+    if (os.environ.get('PORT')):
+        port = int(os.environ.get('PORT'))
+    else:
+        port = 5000
+    flask_app.run(host="0.0.0.0", debug=True, port=port)
     # res = predict_gender("This is not a good product. Please avoid it")
     # print(res)
