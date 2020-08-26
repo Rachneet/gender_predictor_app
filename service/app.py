@@ -6,6 +6,7 @@ import char_cnn
 from char_cnn import CharCNN
 import os
 
+cnn = CharCNN(n_classes=2)
 csv.field_size_limit(sys.maxsize)
 
 
