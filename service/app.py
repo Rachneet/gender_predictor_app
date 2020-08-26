@@ -1,23 +1,17 @@
 from flask import Flask, request, jsonify, make_response
 from flask_restplus import Api, Resource, fields
-from nltk.corpus import stopwords
-import string
-import torch
-import torch.nn as nn
-import numpy as np
 import csv
 import sys
+from ui.service import char_cnn
+from ui.service.char_cnn import CharCNN
 import os
-import char_cnn
-from char_cnn import CharCNN
-
 
 csv.field_size_limit(sys.maxsize)
 
 
 #-------------------------------------flask backend-----------------------------------------------
 
-flask_app = Flask(__name__, static_folder="build", static_url_path="")
+flask_app = Flask(__name__, static_folder="../build", static_url_path="/")
 
 # @flask_app.route('/', methods=["GET"])
 # def index():
@@ -86,7 +80,7 @@ class MainClass(Resource):
             # print(formData)
             data = [val for val in formData.values()]
             # print(data)
-            prediction = predict_gender(data)
+            prediction = char_cnn.predict_gender(data)
             # prediction = predict.prediction(data)
 
             response = jsonify({
@@ -109,44 +103,44 @@ class MainClass(Resource):
 #----------------------------------------------Inference module------------------------------------------------------
 
 
-def predict_gender(text):
-    res = ""
-    words = stopwords.words("english")
-    table = str.maketrans('', '', string.punctuation)
-    # text = "This thing is not good at all. Do not buy it."
-    text = text[0]
-    cleaned_text = " ".join([i.translate(table) for i in text.split() if i.isalpha() if i not in words]).lower()
-    max_length = 1014
-    vocabulary = list(""" abcdefghijklmnopqrstuvwxyz0123456789-,;.!?:'/\|_@#$%ˆ&*˜‘+-=<>()[]{}""")
-    identity_mat = np.identity(len(vocabulary))
-
-    data = np.array([identity_mat[vocabulary.index(i)] for i in list(cleaned_text) if i in vocabulary],
-                    dtype=np.float32)
-
-    if len(data) > max_length:
-        data = data[:max_length]
-    elif 0 < len(data) < max_length:
-        data = np.concatenate(
-            (data, np.zeros((max_length - len(data), len(vocabulary)), dtype=np.float32)))
-    elif len(data) == 0:
-        data = np.zeros((max_length, len(vocabulary)), dtype=np.float32)
-
-
-    model = torch.load("model_amz_ccnn").cpu()
-    model.eval()
-
-    data = torch.FloatTensor(data).cpu()
-    data = data.unsqueeze(dim=0)
-    # print(data.shape)
-    prediction = model(data)
-    # print(prediction)
-    prediction = torch.argmax(prediction)
-    if prediction == 0:
-        res = "Male"
-    else:
-        res = "Female"
-
-    return res
+# def predict_gender(text):
+#     res = ""
+#     words = stopwords.words("english")
+#     table = str.maketrans('', '', string.punctuation)
+#     # text = "This thing is not good at all. Do not buy it."
+#     text = text[0]
+#     cleaned_text = " ".join([i.translate(table) for i in text.split() if i.isalpha() if i not in words]).lower()
+#     max_length = 1014
+#     vocabulary = list(""" abcdefghijklmnopqrstuvwxyz0123456789-,;.!?:'/\|_@#$%ˆ&*˜‘+-=<>()[]{}""")
+#     identity_mat = np.identity(len(vocabulary))
+#
+#     data = np.array([identity_mat[vocabulary.index(i)] for i in list(cleaned_text) if i in vocabulary],
+#                     dtype=np.float32)
+#
+#     if len(data) > max_length:
+#         data = data[:max_length]
+#     elif 0 < len(data) < max_length:
+#         data = np.concatenate(
+#             (data, np.zeros((max_length - len(data), len(vocabulary)), dtype=np.float32)))
+#     elif len(data) == 0:
+#         data = np.zeros((max_length, len(vocabulary)), dtype=np.float32)
+#
+#
+#     model = torch.load("model_amz_ccnn").cpu()
+#     model.eval()
+#
+#     data = torch.FloatTensor(data).cpu()
+#     data = data.unsqueeze(dim=0)
+#     # print(data.shape)
+#     prediction = model(data)
+#     # print(prediction)
+#     prediction = torch.argmax(prediction)
+#     if prediction == 0:
+#         res = "Male"
+#     else:
+#         res = "Female"
+#
+#     return res
 
 
 #-----------------------------------------------------MAIN------------------------------------------------------
