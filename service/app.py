@@ -13,7 +13,44 @@ csv.field_size_limit(sys.maxsize)
 
 #-------------------------------------flask backend-----------------------------------------------
 
-flask_app = Flask(__name__)
+flask_app = Flask(__name__, static_folder="../build", static_url_path="/")
+
+# @flask_app.route('/', methods=["GET"])
+# def index():
+#     return flask_app.send_static_file('index.html')
+#
+# @flask_app.route('/favicon.ico', methods=["GET"])
+# def favicon():
+#     return flask_app.send_static_file('favicon.ico')
+#
+#
+# @flask_app.route('/prediction', methods=["GET"])
+# def make_prediction():
+#     print("in pred")
+#     try:
+#         formData = request.json
+#         print(formData)
+#         data = [val for val in formData.values()]
+#         # print(data)
+#         prediction = predict_gender(data)
+#         # prediction = predict.prediction(data)
+#
+#         response = jsonify({
+#             "statusCode": 200,
+#             "status": "Prediction made",
+#             "result": "This text was written by a : " + str(prediction)
+#             })
+#         # print(response)
+#         response.headers.add('Access-Control-Allow-Origin', '*')
+#         return response
+#     except Exception as error:
+#         return jsonify({
+#             "statusCode": 500,
+#             "status": "Could not make prediction",
+#             "error": str(error)
+#         })
+
+
 app = Api(app = flask_app,
 		  version = "1.0",
 		  title = "Gender predictor app",
