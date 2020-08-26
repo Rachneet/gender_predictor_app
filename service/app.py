@@ -2,8 +2,8 @@ from flask import Flask, request, jsonify, make_response
 from flask_restplus import Api, Resource, fields
 import csv
 import sys
-import char_cnn
-from char_cnn import CharCNN
+from app import char_cnn
+from app.char_cnn import CharCNN
 import os
 
 cnn = CharCNN(n_classes=2)
