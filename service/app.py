@@ -25,7 +25,7 @@ flask_app = Flask(__name__, static_folder="build", static_url_path="")
 #     return flask_app.send_static_file('favicon.ico')
 #
 #
-# @flask_app.route('/prediction', methods=["GET"])
+# @flask_app.route('/prediction', methods=["GET","POST"])
 # def make_prediction():
 #     print("in pred")
 #     try:
@@ -262,6 +262,6 @@ if __name__ == "__main__":
         port = int(os.environ.get('PORT'))
     else:
         port = 5000
-    flask_app.run(host="0.0.0.0", debug=True, port=port)
+    flask_app.run(host="127.0.0.1", debug=True, port=port)
     # res = predict_gender("This is not a good product. Please avoid it")
     # print(res)
