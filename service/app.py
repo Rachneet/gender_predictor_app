@@ -2,8 +2,8 @@ from flask import Flask, request, jsonify, make_response
 from flask_restplus import Api, Resource, fields
 import csv
 import sys
-from ui.service import char_cnn
-from ui.service.char_cnn import CharCNN
+import char_cnn
+from char_cnn import CharCNN
 import os
 
 csv.field_size_limit(sys.maxsize)
@@ -11,7 +11,7 @@ csv.field_size_limit(sys.maxsize)
 
 #-------------------------------------flask backend-----------------------------------------------
 
-flask_app = Flask(__name__, static_folder="../build", static_url_path="/")
+flask_app = Flask(__name__, static_folder="build", static_url_path="")
 
 # @flask_app.route('/', methods=["GET"])
 # def index():
