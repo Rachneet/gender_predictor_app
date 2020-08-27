@@ -15,7 +15,7 @@ csv.field_size_limit(sys.maxsize)
 
 #-------------------------------------flask backend-----------------------------------------------
 
-flask_app = Flask(__name__, static_folder="../build", static_url_path="/")
+flask_app = Flask(__name__, static_folder="build/", static_url_path="/")
 
 @flask_app.route('/', methods=["GET"])
 def index():
@@ -26,10 +26,10 @@ def index():
 #     return flask_app.send_static_file('favicon.ico')
 
 
-app = Api(app = flask_app,
-		  version = "1.0",
-		  title = "Gender predictor app",
-		  description = "Predict gender using a trained model")
+app = Api(app=flask_app,
+        version="1.0",
+        title="Gender predictor app",
+        description="Predict gender using a trained model")
 
 name_space = app.namespace('prediction', description='Prediction APIs')
 
