@@ -16,8 +16,9 @@
 // });
 // app.listen(port);
 
+const express = require('express');
 const app = express();
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 5000;
 if (process.env.NODE_ENV === 'production') {
   // Exprees will serve up production assets
   app.use(express.static(path.join(__dirname, 'build')));
