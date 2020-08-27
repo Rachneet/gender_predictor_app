@@ -15,18 +15,31 @@
 //   res.sendFile(path.join(__dirname, 'build', 'index.html'));
 // });
 // app.listen(port);
+//
+// const express = require('express');
+// const app = express();
+// const port = process.env.PORT || 5000;
+// if (process.env.NODE_ENV === 'production') {
+//   // Exprees will serve up production assets
+//   app.use(express.static(path.join(__dirname, 'build')));
+//
+//   // Express serve up index.html file if it doesn't recognize route
+//   const path = require('path');
+//   app.get('*', (req, res) => {
+//     res.sendFile(path.resolve(__dirname, 'build', 'index.html'));
+//   });
+//   app.listen(port);
+// }
 
+const path = require('path');
 const express = require('express');
 const app = express();
-const port = process.env.PORT || 5000;
-if (process.env.NODE_ENV === 'production') {
-  // Exprees will serve up production assets
-  app.use(express.static(path.join(__dirname, 'build')));
-
-  // Express serve up index.html file if it doesn't recognize route
-  const path = require('path');
-  app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'build', 'index.html'));
-  });
-  app.listen(port);
-}
+const publicPath = path.join(__dirname, 'build');
+const port = process.env.PORT || 3000;
+app.use(express.static(publicPath));
+app.get('*', (req, res) => {
+   res.sendFile(path.join(publicPath, 'index.html'));
+});
+app.listen(port, () => {
+   console.log('Server is up!');
+});
