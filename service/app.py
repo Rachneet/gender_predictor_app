@@ -15,7 +15,7 @@ csv.field_size_limit(sys.maxsize)
 
 #-------------------------------------flask backend-----------------------------------------------
 
-flask_app = Flask(__name__, static_folder="build/", static_url_path="/")
+flask_app = Flask(__name__, static_folder="../build", static_url_path="/")
 
 @flask_app.route('/', methods=["GET"])
 def index():
